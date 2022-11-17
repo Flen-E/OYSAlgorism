@@ -11,13 +11,25 @@ public class M1929 {
 
         ArrayList<Integer> decimal = new ArrayList<>();
 
-        decimal.add(2);
-        decimal.add(3);
-        decimal.add(5);
-        decimal.add(7);
 
-        for(int i = min; i < max; i ++){
 
+
+        for(int i = min; i <= max; i++ ){
+            if(i == 2)
+                decimal.add(2);
+            if(i == 3)
+                decimal.add(3);
+            for(int j = 2; j <= (int)Math.sqrt(i); j++){
+                if(i % j ==0){
+                    break;
+                }
+                if(j ==(int)Math.sqrt(i))
+                    decimal.add(i);
+            }
         }
+        for(int i = 0; i < decimal.size(); i++){
+            System.out.println(decimal.get(i));
+        }
+
     }
 }
